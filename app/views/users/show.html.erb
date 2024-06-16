@@ -1,18 +1,24 @@
-<div class="container mx-auto p-4">
-  <div class="flex items-center mb-4">
-    <img src="https://picsum.photos/id/<%= @user['id'] %>/200/200" alt="<%= @user['username'] %>">
-    <div class="ml-4">
-      <h1 class="text-3xl"><%= @user['name'] %></h1>
-      <p><%= @user['email'] %></p>
+<div class="container mx-auto p-4 bg-gray-100 transform scale-110">
+  <div class="mb-4 flex items-center bg-white p-8 rounded-lg shadow-md">
+    <img src="https://picsum.photos/id/<%= @user['id'] %>/200/200" alt="<%= @user['username'] %>" class="rounded-full w-32 h-32 mr-6">
+    <div>
+      <h1 class="text-3xl mb-2"><strong><%= @user['name'] %></strong></h1>
+      <p class="mb-2"><strong>Email: </strong><%= @user['email'] %></p>
+      <p class="mb-2"><strong>Phone: </strong><%= @user['phone'] %></p>
+      <p><strong>Address:</strong><%= @user['address']['street'] %>, <%= @user['address']['suite'] %>, <%= @user['address']['city'] %>, <%= @user['address']['zipcode'] %></p>
     </div>
   </div>
-  <h2 class="text-2xl">Albüm Listesi</h2>
-  <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    <% @albums.each do |album| %>
-      <div class="border p-4">
-        <h3 class="text-xl"><%= album['title'] %></h3>
-        <a href="<%= user_album_path(@user['id'], album['id']) %>" class="text-blue-500">Detayları Gör</a>
-      </div>
-    <% end %>
+
+  <div>
+    <h2 class="text-2xl font-bold mb-4 mt-0 pl-5">Albüm Listesi</h2>
+    <div class="shadow-md rounded-lg overflow-hidden">
+      <% @albums.each do |album| %>
+        <div class="bg-white border p-4 rounded-lg mb-4 flex justify-between items-center">
+          <h3 class="text-xl"><%= album['title'] %></h3>
+          <a href="<%= user_album_path(@user['id'], album['id']) %>" class="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">Detayları Gör</a>
+        </div>
+      <% end %>
+    </div>
   </div>
+
 </div>
