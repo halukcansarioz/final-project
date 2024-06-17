@@ -6,9 +6,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <!-- Preload CSS files with correct as attribute -->
+    <link rel="preload" href="/assets/tailwind-f7a3f78a9a592e8b6588078447e022bb96ae4394530d094ca2f675b574421241.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="/assets/application-7747ef72474843ade14142d1771c8499cf81ec07a83b81fb5f3f82da2f57e6a9.css" as="style" onload="this.rel='stylesheet'">
+
+    <!-- Fallback for browsers that do not support rel=preload -->
+    <noscript>
+      <link rel="stylesheet" href="/assets/tailwind-f7a3f78a9a592e8b6588078447e022bb96ae4394530d094ca2f675b574421241.css">
+      <link rel="stylesheet" href="/assets/application-7747ef72474843ade14142d1771c8499cf81ec07a83b81fb5f3f82da2f57e6a9.css">
+    </noscript>
   </head>
 
   <body>

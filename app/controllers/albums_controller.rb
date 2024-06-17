@@ -12,7 +12,7 @@ class AlbumsController < ApplicationController
   end
 
   def fetch_photos(album_id)
-    response = HTTParty.get("https://jsonplaceholder.typicode.com/photos?albumId=#{album_id}")
+    response = HTTParty.get("https://jsonplaceholder.typicode.com/photos?albumId=#{album['id']}&id=#{(album['id'].to_i - 1) * 50 + 5}")")
     JSON.parse(response.body)
   end
 end

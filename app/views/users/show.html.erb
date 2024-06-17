@@ -10,7 +10,7 @@
   </div>
 
   <div>
-    <h2 class="text-2xl font-bold mb-4 mt-0 pl-5">Albüm Listesi</h2>
+    <h2 class="text-2xl font-bold mb-4 mt-0">Albüm Listesi</h2>
     <div class="shadow-md rounded-lg overflow-hidden">
       <% @albums.each do |album| %>
         <div class="bg-white shadow-md rounded-lg mb-4">
@@ -25,13 +25,20 @@
               />
             </div>
             <div class="text-left w-full">
-              <h3 class="text-lg font-semibold mb-1 "><%= album['title'] %></h3>
+              <h3 class="text-lg mb-1 capitalize"><%= album['title'] %></h3>
             </div>
-              <button class="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 open-modal" data-id="<%= album['id'] %>">Detayları Gör</button>
-              <div class="popupContent" id="popup-<%= album['id'] %>" style="display: none;">
-                <button class="close-button">X</button>
-                <p>Pop-up İçeriği Burada</p>
+            <button class="text-white bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 open-modal" data-id="<%= album['id'] %>">Detayları Gör</button>
+
+            <div class="popupContent" id="popup-<%= album['id'] %>" style="display: none;">
+              <img src="<%= photo['url'] %>" alt="<%= photo['title'] %>" class="mx-auto w-32 h-32 mb-4 rounded-full">
+              <div class="text-left w-full">
+                  <h3 class="mb-2 capitalize"><strong>Başlık: </strong><%= album['title'] %></h3>
+                  <p class="mb-4"><strong>URL: </strong><%= photo['url'] %></p>
               </div>
+
+              <button class="close-button bg-red-600 text-white px-2 py-1 rounded-md hover:bg-red-700" style="position: fixed; bottom: 20px">Kapat</button>
+          </div>
+
           </div>
         </div>
       <% end %>
@@ -39,25 +46,66 @@
   </div>
 </div>
 
+
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll(".open-modal").forEach(button => {
-      button.addEventListener("click", function() {
-        var albumId = this.getAttribute("data-id");
-        var popup = document.getElementById("popup-" + albumId);
-        if (popup) {
-          popup.style.display = "block";
-        }
-      });
+  (function() {
+    // Create a MutationObserver instance
+    const observer = new MutationObserver(function(mutationsList, observer) {
+      // Handle DOM changes here
+      // For example, you can reattach event listeners when new elements are added to the DOM
+      attachEventListeners();
     });
 
-    document.querySelectorAll(".close-button").forEach(button => {
-      button.addEventListener("click", function() {
-        var popup = this.closest(".popupContent");
-        if (popup) {
-          popup.style.display = "none";
+    // Configure and start the observer
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Function to attach event listeners to new elements
+    function attachEventListeners() {
+      const openModalButtons = document.querySelectorAll('.open-modal');
+      const closeButtons = document.querySelectorAll('.close-button');
+      const popups = document.querySelectorAll('.popupContent');
+
+      openModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.getAttribute('data-id');
+          const popup = document.getElementById(`popup-${id}`);
+
+          // Close all other popups
+          popups.forEach(p => {
+            if (p !== popup) {
+              p.style.display = 'none';
+            }
+          });
+
+          // Display the selected popup
+          popup.style.display = 'block';
+
+          // Position the popup relative to the button
+          const rect = button.getBoundingClientRect();
+          popup.style.position = 'absolute';
+          popup.style.top = `${rect.top + window.scrollY - 100}px`; // Adjusted top value
+          popup.style.left = `${rect.left - popup.offsetWidth - 10}px`;
+        });
+      });
+
+      closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          button.closest('.popupContent').style.display = 'none';
+        });
+      });
+
+      window.addEventListener('click', (e) => {
+        if (!e.target.matches('.open-modal')) {
+          popups.forEach(popup => {
+            if (popup.style.display === 'block' && !popup.contains(e.target)) {
+              popup.style.display = 'none';
+            }
+          });
         }
       });
-    });
-  });
+    }
+
+    // Attach event listeners to existing elements on page load
+    attachEventListeners();
+  })();
 </script>
