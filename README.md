@@ -1,92 +1,140 @@
-# 📊 Impact of Data Source Diversity on Financial Sentiment Analysis Models (Final Project)
+# 📊 Final Project
+### (Ruby on Rails ile Geliştirilmiş Veri Odaklı Web Uygulaması)
 
-Welcome to the **Final Project** repository! This academic and practical data science project focuses on building a robust Python-based data standardization pipeline to analyze how diverse data sources impact financial sentiment analysis models. 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Ruby on Rails](https://img.shields.io/badge/Ruby%20on%20Rails-CC0000?style=flat&logo=ruby-on-rails&logoColor=white)](#)
+[![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat&logo=ruby&logoColor=white)](#)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)](#)
 
-## 👨🏼‍💻 About the Developer & Motivation
+Bu repo, Ruby on Rails framework'ü kullanılarak geliştirilmiş bir final projesidir. MVC mimarisi, RESTful yönlendirme ve veritabanı yönetimi gibi temel Rails konularını uygulamalı olarak göstermektedir.
 
-I have been trying to improve myself since I graduated from Ankara University Computer Engineering. For this, I attend courses from online platforms. While I have experience in full-stack development, I am also deeply engaged in data science, systems analysis, and natural language processing (NLP). This repository represents my final term project, focusing on benchmarking state-of-the-art models in the financial domain.
-
-## ✨ Project Overview & Features
-
-This project specifically focuses on processing and standardizing datasets like **PhraseBank, StockTwits, and NOSIBLE** to prepare them for advanced NLP benchmarking (e.g., BERT and Transformers).
-
-*   **Data Standardization Pipeline (Phase 1):** Comprehensive cleaning of raw financial text, including HTML tag removal and text normalization.
-*   **Uniform Label Mapping:** A strict standardization protocol for sentiment labels across all diverse datasets:
-    *   `1` = Positive
-    *   `0` = Neutral
-    *   `-1` = Negative
-*   **Model Benchmarking:** Preparing clean, uniform data to evaluate the performance and accuracy of various NLP models on financial text.
-*   **Academic Rigor:** Built with a foundation of high-impact literature review, targeting recent Q1-Q4 ranked journal methodologies.
-
-## 🛠️ Tech Stack & Tools
-
-*   **Language:** Python
-*   **Data Processing:** Pandas, NumPy
-*   **NLP / ML:** Hugging Face Transformers, BERT, Scikit-learn (or equivalent libraries used in the pipeline)
-*   **Environment:** Jupyter Notebook / Python Scripts
-*   **Version Control:** Git & GitHub
-
-## 🚀 Getting Started
-
-Follow these instructions to set up the data processing pipeline on your local machine.
-
-### Prerequisites
-
-Ensure you have Python installed on your system:
-*   [Python 3.8+](https://www.python.org/downloads/)
-*   Git
-
-### Installation & Setup
-
-1.  **Clone the repository:**
-    
-    ```bash
-    git clone [https://github.com/halukcansarioz/final-project.git](https://github.com/halukcansarioz/final-project.git)
-    ```
-
-2.  **Navigate to the project directory:**
-
-    ```bash
-    cd final-project
-    ```
-
-3.  **Create a virtual environment (Recommended):**
-
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
-
-4.  **Install dependencies:**
-    *(Ensure you have a `requirements.txt` file in your repo, or update this step with your specific libraries like `pip install pandas transformers`)*
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-5.  **Run the Standardization Pipeline:**
-    Execute the Phase 1 script to clean the data and apply the `1, 0, -1` label mapping.
-
-    ```bash
-    python standardize_data.py
-    ```
-    *(Note: Change `standardize_data.py` to your actual main script name)*
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! 
-Feel free to check the [issues page](https://github.com/halukcansarioz/final-project/issues) if you want to contribute.
-
-## 📜 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📫 Contact
-
-**Haluk Can Sarıöz**
-*   **GitHub:** [@HalukCanSarioz](https://github.com/HalukCanSarioz)
-*   **Email:** halukcansarioz19@gmail.com
-*   **LinkedIn:** [Haluk Can Sarıöz](https://www.linkedin.com/in/halukcansarioz)
+## 📚 İçindekiler
+- [Proje Hakkında](#proje-hakkında)
+- [Özellikler](#özellikler)
+- [Teknoloji Yığını](#teknoloji-yığını)
+- [Kurulum ve Kullanım](#kurulum-ve-kullanım)
+- [Proje Yapısı](#proje-yapısı)
+- [Katkıda Bulunma](#katkıda-bulunma)
+- [İletişim](#iletisim)
+- [Lisans](#lisans)
 
 ---
-*If you find this financial NLP pipeline useful, please consider giving it a ⭐!*
+
+## Proje Hakkında
+Ruby on Rails ile geliştirilmiş bu uygulama, MVC (Model-View-Controller) tasarım desenini kullanarak temiz bir kod yapısı sunar. Active Record modelleri ile veritabanı işlemleri, RESTful yönlendirme ile tutarlı bir sayfa ve API yapısı hedeflenmiştir.
+
+* **Geliştirici:** Haluk Can SARIÖZ
+* **Tür:** Final Projesi (Web Uygulaması)
+* **Amaç:** Rails framework'ünü uygulamalı olarak öğrenmek
+
+---
+
+## Özellikler
+* **MVC Mimarisi:** Model, View ve Controller katmanlarının belirgin ayrımı.
+* **CRUD Operasyonları:** Temel kaynaklar için tam Create, Read, Update ve Delete desteği.
+* **Active Record İlişkileri:** Tablolar arası sağlam veri bağlantıları.
+* **RESTful Yönlendirme:** Standart URL yapıları ile temiz navigasyon.
+* **Docker Desteği:** Kapsayıcı teknolojisi ile kolay kurulum ve dağıtım.
+
+---
+
+## Teknoloji Yığını
+| Katman | Teknoloji |
+|--------|-----------|
+| **Dil** | Ruby |
+| **Framework** | Ruby on Rails |
+| **Veritabanı** | SQLite / PostgreSQL |
+| **Frontend** | HTML5, CSS3, JavaScript |
+| **Kapsayıcı** | Docker |
+| **Versiyon Kontrol** | Git & GitHub |
+
+---
+
+## Kurulum ve Kullanım
+
+### Ön Gereksinimler
+* [Ruby](https://www.ruby-lang.org/en/downloads/)
+* [Ruby on Rails](https://rubyonrails.org/)
+* Git
+
+### Kurulum Adımları
+
+**1. Depoyu klonlayın:**
+```bash
+git clone https://github.com/halukcansarioz/final-project.git
+cd final-project
+```
+
+**2. Bağımlılıkları yükleyin:**
+```bash
+bundle install
+```
+
+**3. Veritabanını hazırlayın:**
+```bash
+rails db:create
+rails db:migrate
+rails db:seed
+```
+
+**4. Rails sunucusunu başlatın:**
+```bash
+rails server
+```
+Uygulama varsayılan olarak `http://localhost:3000` adresinde çalışacaktır.
+
+### Docker ile Çalıştırma
+Proje kök dizininde bir Dockerfile mevcutsa:
+```bash
+docker build -t final-project .
+docker run -p 3000:3000 final-project
+```
+
+---
+
+## Proje Yapısı
+```text
+final-project/
+├── app/
+│   ├── controllers/      # Rails kontrolcüleri
+│   ├── models/           # Active Record modelleri
+│   └── views/            # ERB görünüm şablonları
+├── bin/                  # Rails scriptleri
+├── config/               # Uygulama yapılandırması
+├── db/                   # Veritabanı migrasyonları
+├── lib/                  # Yardımcı kütüphaneler
+├── log/                  # Uygulama logları
+├── public/               # Statik dosyalar
+├── test/                 # Test dosyaları
+├── tmp/                  # Geçici dosyalar
+├── vendor/               # Dış kütüphaneler
+├── Dockerfile            # Docker yapılandırması
+├── Gemfile               # Ruby bağımlılıkları
+├── Rakefile              # Rake görevleri
+└── README.md             # Proje dökümantasyonu
+```
+
+---
+
+## Katkıda Bulunma
+Katkılarınız, hata bildirimleriniz ve özellik istekleriniz memnuniyetle karşılanır!
+
+1. Bu depoyu **Fork**'layın.
+2. Bir **Branch** oluşturun (`git checkout -b feature/YeniOzellik`).
+3. Değişikliklerinizi **Commit** edin (`git commit -m 'Ekleme: Yeni özellik'`).
+4. Kodlarınızı **Push**'layın (`git push origin feature/YeniOzellik`).
+5. Bir **Pull Request** açın.
+
+---
+
+<a name="iletisim"></a>
+## İletişim
+**Haluk Can Sarıöz**
+- GitHub: [@halukcansarioz](https://github.com/halukcansarioz)
+- E-posta: [halukcansarioz19@gmail.com](mailto:halukcansarioz19@gmail.com)
+- LinkedIn: [Haluk Can Sarıöz](https://www.linkedin.com/in/halukcansarioz)
+
+---
+
+## Lisans
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
