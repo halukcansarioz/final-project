@@ -1,90 +1,92 @@
-# 📊 Final Project
-### (Ruby on Rails ile Geliştirilmiş Veri Odaklı Web Uygulaması)
+
+# 🛤️ Final Project
+### (Ruby on Rails Web Application – MVC, RESTful Routing & Database Integration)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Ruby on Rails](https://img.shields.io/badge/Ruby%20on%20Rails-CC0000?style=flat&logo=ruby-on-rails&logoColor=white)](#)
 [![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat&logo=ruby&logoColor=white)](#)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)](#)
 
-Bu repo, Ruby on Rails framework'ü kullanılarak geliştirilmiş bir final projesidir. MVC mimarisi, RESTful yönlendirme ve veritabanı yönetimi gibi temel Rails konularını uygulamalı olarak göstermektedir.
+This repository is the final project developed with **Ruby on Rails**. It demonstrates core backend concepts such as MVC architecture, RESTful routing, and relational database management with Active Record.
 
-## 📚 İçindekiler
-- [Proje Hakkında](#proje-hakkında)
-- [Özellikler](#özellikler)
-- [Teknoloji Yığını](#teknoloji-yığını)
-- [Kurulum ve Kullanım](#kurulum-ve-kullanım)
-- [Proje Yapısı](#proje-yapısı)
-- [Katkıda Bulunma](#katkıda-bulunma)
-- [İletişim](#iletisim)
-- [Lisans](#lisans)
-
----
-
-## Proje Hakkında
-Ruby on Rails ile geliştirilmiş bu uygulama, MVC (Model-View-Controller) tasarım desenini kullanarak temiz bir kod yapısı sunar. Active Record modelleri ile veritabanı işlemleri, RESTful yönlendirme ile tutarlı bir sayfa ve API yapısı hedeflenmiştir.
-
-* **Geliştirici:** Haluk Can SARIÖZ
-* **Tür:** Final Projesi (Web Uygulaması)
-* **Amaç:** Rails framework'ünü uygulamalı olarak öğrenmek
+## 📚 Table of Contents
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation & Usage](#installation--usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [Contact](#contact)
+- [License](#license)
 
 ---
 
-## Özellikler
-* **MVC Mimarisi:** Model, View ve Controller katmanlarının belirgin ayrımı.
-* **CRUD Operasyonları:** Temel kaynaklar için tam Create, Read, Update ve Delete desteği.
-* **Active Record İlişkileri:** Tablolar arası sağlam veri bağlantıları.
-* **RESTful Yönlendirme:** Standart URL yapıları ile temiz navigasyon.
-* **Docker Desteği:** Kapsayıcı teknolojisi ile kolay kurulum ve dağıtım.
+## About the Project
+This web application is built using the **Ruby on Rails** framework. It follows the Model‑View‑Controller pattern to deliver a clean code structure, handles data through Active Record models, and provides a consistent page/API flow with RESTful routing.
+
+- **Developer:** Haluk Can SARIÖZ
+- **Type:** Final Project (Web Application)
+- **Goal:** Learn the Rails framework through hands‑on practice
 
 ---
 
-## Teknoloji Yığını
-| Katman | Teknoloji |
-|--------|-----------|
-| **Dil** | Ruby |
+## Features
+- **MVC Architecture** – Clear separation of Model, View, and Controller layers.
+- **CRUD Operations** – Full Create, Read, Update, and Delete support for core resources.
+- **Active Record Associations** – Strong data relationships between tables.
+- **RESTful Routing** – Clean navigation with standard URL structures.
+- **Docker Support** – Easy setup and deployment via container technology.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|:-------|:-----------|
+| **Language** | Ruby |
 | **Framework** | Ruby on Rails |
-| **Veritabanı** | SQLite / PostgreSQL |
+| **Database** | SQLite / PostgreSQL |
 | **Frontend** | HTML5, CSS3, JavaScript |
-| **Kapsayıcı** | Docker |
-| **Versiyon Kontrol** | Git & GitHub |
+| **Container** | Docker |
+| **Version Control** | Git & GitHub |
 
 ---
 
-## Kurulum ve Kullanım
+## Installation & Usage
 
-### Ön Gereksinimler
-* [Ruby](https://www.ruby-lang.org/en/downloads/)
-* [Ruby on Rails](https://rubyonrails.org/)
-* Git
+### Prerequisites
+- [Ruby](https://www.ruby-lang.org/en/downloads/)
+- [Ruby on Rails](https://rubyonrails.org/)
+- Git
 
-### Kurulum Adımları
+### Steps
 
-**1. Depoyu klonlayın:**
+**1. Clone the repository:**
 ```bash
 git clone https://github.com/halukcansarioz/final-project.git
 cd final-project
 ```
 
-**2. Bağımlılıkları yükleyin:**
+**2. Install dependencies:**
 ```bash
 bundle install
 ```
 
-**3. Veritabanını hazırlayın:**
+**3. Prepare the database:**
 ```bash
 rails db:create
 rails db:migrate
 rails db:seed
 ```
 
-**4. Rails sunucusunu başlatın:**
+**4. Start the Rails server:**
 ```bash
 rails server
 ```
-Uygulama varsayılan olarak `http://localhost:3000` adresinde çalışacaktır.
+The application will run at `http://localhost:3000` by default.
 
-### Docker ile Çalıştırma
-Proje kök dizininde bir Dockerfile mevcutsa:
+### Docker (Optional)
+If a Dockerfile is present in the project root:
 ```bash
 docker build -t final-project .
 docker run -p 3000:3000 final-project
@@ -92,49 +94,49 @@ docker run -p 3000:3000 final-project
 
 ---
 
-## Proje Yapısı
+## Project Structure
 ```text
 final-project/
 ├── app/
-│   ├── controllers/      # Rails kontrolcüleri
-│   ├── models/           # Active Record modelleri
-│   └── views/            # ERB görünüm şablonları
-├── bin/                  # Rails scriptleri
-├── config/               # Uygulama yapılandırması
-├── db/                   # Veritabanı migrasyonları
-├── lib/                  # Yardımcı kütüphaneler
-├── log/                  # Uygulama logları
-├── public/               # Statik dosyalar
-├── test/                 # Test dosyaları
-├── tmp/                  # Geçici dosyalar
-├── vendor/               # Dış kütüphaneler
-├── Dockerfile            # Docker yapılandırması
-├── Gemfile               # Ruby bağımlılıkları
-├── Rakefile              # Rake görevleri
-└── README.md             # Proje dökümantasyonu
+│   ├── controllers/      # Rails controllers
+│   ├── models/           # Active Record models
+│   └── views/            # ERB view templates
+├── bin/                  # Rails scripts
+├── config/               # Application configuration
+├── db/                   # Database migrations
+├── lib/                  # Helper libraries
+├── log/                  # Application logs
+├── public/               # Static files
+├── test/                 # Test files
+├── tmp/                  # Temporary files
+├── vendor/               # External libraries
+├── Dockerfile            # Docker configuration
+├── Gemfile               # Ruby dependencies
+├── Rakefile              # Rake tasks
+└── README.md             # Project documentation
 ```
 
 ---
 
-## Katkıda Bulunma
-Katkılarınız, hata bildirimleriniz ve özellik istekleriniz memnuniyetle karşılanır!
+## Contributing
+Contributions, bug reports, and feature requests are welcome!
 
-1. Bu depoyu **Fork**'layın.
-2. Bir **Branch** oluşturun (`git checkout -b feature/YeniOzellik`).
-3. Değişikliklerinizi **Commit** edin (`git commit -m 'Ekleme: Yeni özellik'`).
-4. Kodlarınızı **Push**'layın (`git push origin feature/YeniOzellik`).
-5. Bir **Pull Request** açın.
+1. **Fork** this repository.
+2. Create a **Branch** (`git checkout -b feature/NewFeature`).
+3. Make your changes and **Commit** (`git commit -m 'Add: New feature'`).
+4. **Push** your code (`git push origin feature/NewFeature`).
+5. Open a **Pull Request**.
 
 ---
 
-<a name="iletisim"></a>
-## İletişim
+<a name="contact"></a>
+## Contact
 **Haluk Can Sarıöz**
 - GitHub: [@halukcansarioz](https://github.com/halukcansarioz)
-- E-posta: [halukcansarioz19@gmail.com](mailto:halukcansarioz19@gmail.com)
+- Email: [halukcansarioz19@gmail.com](mailto:halukcansarioz19@gmail.com)
 - LinkedIn: [Haluk Can Sarıöz](https://www.linkedin.com/in/halukcansarioz)
 
 ---
 
-## Lisans
-Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
+## License
+This project is licensed under the [MIT License](LICENSE).
